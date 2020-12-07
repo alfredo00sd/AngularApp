@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppMapComponent implements OnInit {
 
-  constructor() { }
+  lat : number;
+  lng : number;
+  zoom : number;
+  mapTypeId : string;
+
+  constructor() { 
+    this.lat = 18.4801923;
+    this.lng = -70.0169209;
+    this.zoom = 8;
+    this.mapTypeId = 'hybrid';
+  }
 
   ngOnInit(): void {
   }

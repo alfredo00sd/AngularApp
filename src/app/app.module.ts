@@ -23,6 +23,7 @@ import { AppTreeFormComponent } from './app-tree/app-tree-form/app-tree-form.com
 import { AppTreeListComponent } from './app-tree/app-tree-list/app-tree-list.component';
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppMapComponent } from './app-home/app-map/app-map.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,9 @@ import { AppMapComponent } from './app-home/app-map/app-map.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey : 'AIzaSyD46I-WyorPMJnIt4hUCuJjPivISW5XjXs'
+    }),
     ToastrModule.forRoot()
   ],
   providers: [PaymentDetailService],
