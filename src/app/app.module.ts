@@ -18,8 +18,12 @@ import { AppUserComponent } from './app-user/app-user.component';
 import { AppUserListComponent } from './app-user/app-user-list/app-user-list.component';
 import { AppUserFormComponent } from './app-user/app-user-form/app-user-form.component';
 import { UserLoginComponent } from './app-user/user-login/user-login.component';
+import { AppTreeComponent } from './app-tree/app-tree.component';
+import { AppTreeFormComponent } from './app-tree/app-tree-form/app-tree-form.component';
+import { AppTreeListComponent } from './app-tree/app-tree-list/app-tree-list.component';
+import { AppHomeComponent } from './app-home/app-home.component';
+import { AppMapComponent } from './app-home/app-map/app-map.component';
 
- 
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,12 @@ import { UserLoginComponent } from './app-user/user-login/user-login.component';
     AppUserComponent,
     AppUserListComponent,
     AppUserFormComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    AppTreeComponent,
+    AppTreeFormComponent,
+    AppTreeListComponent,
+    AppHomeComponent,
+    AppMapComponent
   ],
   imports: [
     BrowserModule,

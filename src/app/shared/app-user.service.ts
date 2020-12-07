@@ -29,21 +29,21 @@ export class AppUserService {
   postAppUser() {
     //Post url from web API
     console.log(this.formData);
-    return this.http.post(this.rootUrl+'/UserModels', this.formData);
+    return this.http.post(this.rootUrl+'/userController', this.formData);
   }
 
   updateAppUser() {
     //Post url from web API
-    return this.http.put(this.rootUrl+'/UserModels/'+this.formData.Id, this.formData);
+    return this.http.put(this.rootUrl+'/userController/'+this.formData.Id, this.formData);
   }
 
   deleteAppUser(Id) {
-    return this.http.delete(this.rootUrl+'/UserModels/'+Id);
+    return this.http.delete(this.rootUrl+'/userController/'+Id);
   }
 
   //Get all records from API
   refreshList(){
-    this.http.get(this.rootUrl+'/UserModels').toPromise()
+    this.http.get(this.rootUrl+'/userController').toPromise()
     .then(res => this.list = res as AppUser[] );
   }
 
