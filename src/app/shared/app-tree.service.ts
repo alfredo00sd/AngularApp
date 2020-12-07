@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { AppTree } from './app-tree.model';
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
+
 export class AppTreeService {
   
   formData : AppTree = {
@@ -41,6 +40,6 @@ export class AppTreeService {
   //Get all records from API
   refreshList(){
     this.http.get(this.rootUrl+'/TreesController').toPromise()
-    .then(res => this.list = res as AppTree[] );
+    .then(res => this.list = res as AppTree[]).catch(error => console.log(error));
   }
 }

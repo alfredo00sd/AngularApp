@@ -1,4 +1,23 @@
-<!-- <p>app-map works!</p> -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
+<div class="jumbtron">
+    <h1 class="display-5 text-center">
+        Arboles plantados : {{arboles.length}} Usuarios activos : 12 <button class="btn btn-info" (click)="getCurrentPosition()">Posicion actual</button>
+    </h1>
+    <hr>
 
-</agm-map>
+    <div class="row">
+        <div class="col-md-12">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"  [fitBounds]="true">
+   
+                <agm-marker *ngFor="let arbol of arboles" [latitude]="arbol.Latitud" [longitude]="arbol.Longitud" [agmFitBounds]="true" [iconUrl]="{url:'../../../assets/images/icon.png', scaledSize : {height: 80, width : 70}}" >
+                     <agm-info-window>
+                         <img src="../../../assets/images/arbol{{arbol.Id}}.png"><br>
+                         🌺Especie : <b>{{arbol.Especie}}</b> <br>
+                         🌲Nombre : {{arbol.Nombre}} <br>
+                         🌿Plantador : Yo 
+                     </agm-info-window>
+                 </agm-marker>
+             </agm-map>
+        </div>
+    </div>
+</div>
+
