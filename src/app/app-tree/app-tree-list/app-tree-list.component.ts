@@ -5,8 +5,7 @@ import { AppTreeService } from 'src/app/shared/app-tree.service';
 
 @Component({
   selector: 'app-app-tree-list',
-  templateUrl: './app-tree-list.component.html',
-  styleUrls: []
+  templateUrl: './app-tree-list.component.html'
 })
 export class AppTreeListComponent implements OnInit {
 

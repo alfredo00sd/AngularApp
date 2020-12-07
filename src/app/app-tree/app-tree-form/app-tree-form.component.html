@@ -47,7 +47,7 @@
                 <i class="fa fa-map-marker-alt" [class.green-icon]="Latitud.valid" [class.red-icon]="Latitud.invalid && Latitud.touched"></i>
               </div>
             </div> 
-            <input  #Latitud="ngModel" [(ngModel)]="service.formData.Latitud" id="Latitud" name="Latitud" placeholder="Latitud" type="text" class="form-control" required="required">
+            <input  #Latitud="ngModel" [(ngModel)]="service.formData.Latitud" id="Latitud" name="Latitud" placeholder="Latitud" type="text" class="form-control" required="required" readonly>
           </div>
         </div>
         <div class="col-6">
@@ -57,7 +57,7 @@
                 <i class="fa fa-map-marker" [class.green-icon]="Longitud.valid" [class.red-icon]="Longitud.invalid && Longitud.touched"></i>
               </div>
             </div> 
-            <input #Longitud="ngModel" [(ngModel)]="service.formData.Longitud" id="Longitud" name="Longitud" placeholder="Longitud" type="text" class="form-control" required="required">
+            <input #Longitud="ngModel" [(ngModel)]="service.formData.Longitud" id="Longitud" name="Longitud" placeholder="Longitud" type="text" class="form-control" required="required" readonly>
           </div>
         </div>
       </div>
@@ -70,9 +70,11 @@
     </div>
 
     <div class="form-group row">
-      <div class="offset-4 col-8">
+      <div class="col-6">
+        <button name="info" class="btn btn-info" (click)="getCurrentPosition()">Posicion actual</button>
+      </div>
+      <div class="col-6">
         <button name="submit" type="submit" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i> Submit</button>
       </div>
     </div>
-
-  </form>
+</form>

@@ -21,14 +21,6 @@ export class AppMapComponent implements OnInit {
     this.mapTypeId = 'hybrid';
   }
 
-  getCurrentPosition() {
-    navigator.geolocation.getCurrentPosition(position => {
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-      this.zoom = 15;
-    });
-  }
-
   ngOnInit(): void {
     this.service.getAll().then(arboles => this.arboles = arboles).catch(err => console.log(err));
   }

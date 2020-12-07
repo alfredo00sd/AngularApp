@@ -1,26 +1,30 @@
 <!-- Image and text -->
 <nav class="navbar navbar-dark bg-success">
-    <a class="navbar-brand" href="#">
-      <img src="assets/images/tree.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      App Tree RD
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Agregar arbol <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/src/app/payment-details/payment-details.component.html">Contribuidores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mapa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sobre nosotros</a>
-          </li>
-        </ul>
-      </div>
-  </nav>
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="activebutton">
+    <img src="assets/images/tree.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    App Tree RD
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/trees"  routerLinkActive="activebutton">Arboles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/users"  routerLinkActive="activebutton">Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contribuir"  routerLinkActive="activebutton">Contribuir</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aboutUs"  routerLinkActive="activebutton">Sobre nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login"  routerLinkActive="activebutton">Iniciar session</a>
+        <a class="nav-link" href="#">Cerrar session</a>
+      </li>
+    </ul>
+  </div>
+</nav>

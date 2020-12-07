@@ -20,7 +20,7 @@
             <td (click)="populateForm(pd)">{{pd.Descripcion}}</td>
             <td (click)="populateForm(pd)">{{pd.Latitud}}</td>
             <td (click)="populateForm(pd)">{{pd.Longitud}}</td>
-            <td (click)="populateForm(pd)"><img src="{{pd.Foto}}" alt="imagen del arbol"></td>
+            <td (click)="populateForm(pd)"><img style="height:90px; width:85px;" src="../../../assets/images/arbol{{pd.Id}}.png"></td>
             <td>
               <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.Id)"></i>
             </td>

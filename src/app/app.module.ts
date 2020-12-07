@@ -24,6 +24,8 @@ import { AppTreeListComponent } from './app-tree/app-tree-list/app-tree-list.com
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppMapComponent } from './app-home/app-map/app-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { RouterModule } from '@angular/router';
+import { AboutUsComponent } from './applayout/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     AppTreeFormComponent,
     AppTreeListComponent,
     AppHomeComponent,
-    AppMapComponent
+    AppMapComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,14 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey : 'AIzaSyD46I-WyorPMJnIt4hUCuJjPivISW5XjXs'
-    }),
+    }),RouterModule.forRoot([
+      {path: 'home', component: AppMapComponent},
+      {path: 'trees', component: AppTreeComponent},
+      {path: 'users', component: AppUserComponent},
+      {path: 'contribuir', component: PaymentDetailsComponent},
+      {path: 'aboutUs', component: AboutUsComponent},
+      {path: 'login', component: UserLoginComponent}
+    ]),
     ToastrModule.forRoot()
   ],
   providers: [PaymentDetailService],

@@ -14,8 +14,15 @@ export class AppTreeFormComponent implements OnInit {
 
   ngOnInit(): void { this.resetForm(); }
 
+  getCurrentPosition() {
+    navigator.geolocation.getCurrentPosition(position => {
+      this.service.formData.Latitud =  ""+position.coords.latitude;
+      this.service.formData.Longitud = ""+position.coords.longitude;
+    });
+  }
+
   // Clear form data
-  resetForm(form ?: NgForm){
+  resetForm(form ?: NgForm) {
   
     if(form != null)
       form.resetForm();
@@ -32,11 +39,13 @@ export class AppTreeFormComponent implements OnInit {
 
   // Here we have the data ones someone submit the form, then here we can access form-data.
   onSubmit(form : NgForm) {
-    console.log(form)
-    if(this.service.formData.Id == 0)
-      this.insertRecord(form);
-    else
-      this.updateRecord(form);
+    // console.log(form)
+    if(form.valid) {
+      if(this.service.formData.Id == 0)
+        this.insertRecord(form);
+      else
+        this.updateRecord(form);
+    } 
   }
 
   insertRecord(form : NgForm) {
