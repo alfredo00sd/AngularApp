@@ -4,11 +4,11 @@ import { ToastrService } from 'ngx-toastr';
 import { AppUserService } from 'src/app/shared/app-user.service';
 
 @Component({
-  selector: 'app-app-user-form',
-  templateUrl: './app-user-form.component.html',
-  styleUrls: []
+  selector: 'app-app-user-register',
+  templateUrl: './app-user-register.component.html',
+  styleUrls: ['./app-user-register.component.css']
 })
-export class AppUserFormComponent implements OnInit {
+export class AppUserRegisterComponent implements OnInit {
 
   constructor(public service : AppUserService, public toastr : ToastrService) { }
 
@@ -16,7 +16,6 @@ export class AppUserFormComponent implements OnInit {
     this.resetForm();
   }
 
-  // Clear form data
   resetForm(form ?: NgForm){
   
     if(form != null)
@@ -36,15 +35,12 @@ export class AppUserFormComponent implements OnInit {
     }
   }
 
-  // Here we have the data ones someone submit the form, then here we can access form-data.
-  onSubmit(form : NgForm) {
+   // Here we have the data ones someone submit the form, then here we can access form-data.
+   onSubmit(form : NgForm) {
     console.log(form)
     if(this.service.formData.Id == 0)
       this.insertRecord(form);
-    else
-      this.updateRecord(form);
   }
-
   insertRecord(form : NgForm) {
     
     //Post form data to API.
@@ -52,21 +48,6 @@ export class AppUserFormComponent implements OnInit {
       res => {
         this.resetForm(form);
         this.toastr.success("Submitted Successfuly", "AngularApp");
-        this.service.refreshList();
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
-  updateRecord(form : NgForm) {
-    
-    //Post form data to API.
-    this.service.updateAppUser().subscribe(
-      res => {
-        this.resetForm(form);
-        this.toastr.info("Data updated Successfuly", "AngularApp");
         this.service.refreshList();
       },
       err => {

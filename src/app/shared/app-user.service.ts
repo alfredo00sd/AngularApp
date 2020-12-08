@@ -8,6 +8,7 @@ export class AppUserService {
   
   formData : AppUser = {
     Id : null,
+    Cedula : null,
     Name : null,
     LastName : null,
     Email : null,

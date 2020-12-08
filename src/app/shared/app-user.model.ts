@@ -1,5 +1,6 @@
 export class AppUser {
     Id : number;
+    Cedula : string;
     Name : string;
     LastName : string;
     Email : string;

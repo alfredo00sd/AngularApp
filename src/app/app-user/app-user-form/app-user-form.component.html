@@ -51,7 +51,7 @@
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text">
-                <i class="fa-user-circle-o" [class.green-icon]="UserType.valid" [class.red-icon]="UserType.invalid && UserType.touched"></i>
+                <i class="fa-user" [class.green-icon]="UserType.valid" [class.red-icon]="UserType.invalid && UserType.touched"></i>
                 </div>
             </div> 
             <select #UserType="ngModel" [(ngModel)]="service.formData.UserType" id="UserType" name="UserType" class="custom-select" required>
@@ -64,16 +64,38 @@
     </div>
     <div class="col-6">
       <div class="input-group">
-         <label for="price" class="col-4 col-form-label">Color favorito </label> 
-         <input #Color="ngModel" [(ngModel)]="service.formData.Color" type="Color" name="Color" id="color">      
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i [class.green-icon]="Color.valid" [class.red-icon]="Color.invalid && Color.touched">Color favorito</i>
+          </div>
+        </div> 
+        <input #Color="ngModel" [(ngModel)]="service.formData.Color" type="Color" name="Color" id="color" class="form-control">      
       </div>
     </div>
   </div>
   
   <div class="form-group row">
-    <label for="price" class="col-4 col-form-label">Capital de aporte</label> 
-    <div class="col-8">
-      <input #Price="ngModel" [(ngModel)]="service.formData.Price" type="range" name="Price" id="Price" min="0" max="10000" step="1000" value="2000" class="form-control">   
+    <div class="col-6">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i [class.green-icon]="Cedula.valid" [class.red-icon]="Cedula.invalid && Cedula.touched">Cedula</i>
+          </div>
+        </div>
+        <input #Cedula="ngModel" [(ngModel)]="service.formData.Cedula" type="text" name="Cedula" id="Cedula" class="form-control" maxlength="11">      
+      </div>
+    </div>
+    <div class="col-6">
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i [class.green-icon]="Price.valid" [class.red-icon]="Price.invalid && Price.touched">Aporte</i>
+          </div>
+        </div>
+        <input #Price="ngModel" [(ngModel)]="service.formData.Price" type="range" name="Price" id="Price" min="0" max="10000" step="1000" value="2000"  class="form-control">      
+      </div>
+    
       <output class="price-output" for="price"></output>
     </div>
   </div>
@@ -101,7 +123,7 @@
   </div> 
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i> Submit</button>
+      <button name="submit" type="submit" class="btn btn-success btn-block"><i class="fas fa-cloud-upload-alt"></i> Registrar</button>
     </div>
   </div>
 </form>

@@ -26,6 +26,8 @@ import { AppMapComponent } from './app-home/app-map/app-map.component';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { AboutUsComponent } from './applayout/about-us/about-us.component';
+import { AppUserRegisterComponent } from './app-user/app-user-register/app-user-register.component';
+import { AppUserLogComponent } from './app-user/app-user-log/app-user-log.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { AboutUsComponent } from './applayout/about-us/about-us.component';
     AppTreeListComponent,
     AppHomeComponent,
     AppMapComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AppUserRegisterComponent,
+    AppUserLogComponent
   ],
   imports: [
     BrowserModule,

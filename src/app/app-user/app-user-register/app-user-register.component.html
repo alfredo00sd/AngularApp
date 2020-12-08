@@ -1,0 +1,119 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" enctype="application/json">
+    <input type="hidden" name="Id" [value]="service.formData.Id">
+    <div class="form-group row">
+      <div class="col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-user-o" [class.green-icon]="Name.valid" [class.red-icon]="Name.invalid && Name.touched"></i>
+            </div>
+          </div> 
+          <input #Name="ngModel" [(ngModel)]="service.formData.Name" id="Name" name="Name" placeholder="Nombre/s" type="text" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-user-o" [class.green-icon]="LastName.valid" [class.red-icon]="LastName.invalid && LastName.touched"></i>
+            </div>
+          </div> 
+          <input #LastName="ngModel" [(ngModel)]="service.formData.LastName" id="LastName" name="LastName" placeholder="Apellido/s" type="text" class="form-control" required="required">
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <div class="col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-inbox" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i>
+            </div>
+          </div> 
+          <input  #Email="ngModel" [(ngModel)]="service.formData.Email" id="Email" name="Email" placeholder="Correo electronico" type="email" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-birthday-cake" [class.green-icon]="Birthday.valid" [class.red-icon]="Birthday.invalid && Birthday.touched"></i>
+            </div>
+          </div> 
+          <input #Birthday="ngModel" [(ngModel)]="service.formData.Birthday" id="Birthday" name="Birthday" placeholder="Fecha de nacimiento" type="date" class="form-control" required="required">
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <div class="col-12">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">
+                  <i class="fa-user" [class.green-icon]="UserType.valid" [class.red-icon]="UserType.invalid && UserType.touched"></i>
+                  </div>
+              </div> 
+              <select #UserType="ngModel" [(ngModel)]="service.formData.UserType" id="UserType" name="UserType" class="custom-select" required>
+                  <option value="">Tipo de usuario</option>
+                  <option value="colaborador">Colaborador</option>
+                  <option value="voluntario">Voluntario</option>
+                  <option value="patrocinador">Patrocinador</option>
+              </select>
+          </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="col-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i [class.green-icon]="Cedula.valid" [class.red-icon]="Cedula.invalid && Cedula.touched">Cedula</i>
+            </div>
+          </div>
+          <input #Cedula="ngModel" [(ngModel)]="service.formData.Cedula" type="text" name="Cedula" id="Cedula" class="form-control" maxlength="11">      
+        </div>
+      </div>
+      <div class="col-6">
+  
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i [class.green-icon]="Price.valid" [class.red-icon]="Price.invalid && Price.touched">Aporte</i>
+            </div>
+          </div>
+          <input #Price="ngModel" [(ngModel)]="service.formData.Price" type="range" name="Price" id="Price" min="0" max="10000" step="1000" value="2000"  class="form-control">      
+        </div>
+      
+        <output class="price-output" for="price"></output>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label class="col-4">Genero</label> 
+      <div class="col-8">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input  #Gender="ngModel" [(ngModel)]="service.formData.Gender"  name="Gender" id="Gender_0" type="radio" class="custom-control-input" value="H" required="required"> 
+          <label for="Gender_0" class="custom-control-label">Hombre</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input  #Gender="ngModel" [(ngModel)]="service.formData.Gender" name="Gender" id="Gender_1" type="radio" class="custom-control-input" value="M" required="required"> 
+          <label for="Gender_1" class="custom-control-label">Mujer</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="Comment" class="col-4 col-form-label">Descripcion personal</label> 
+      <div class="col-8">
+        <textarea  #Comment="ngModel" [(ngModel)]="service.formData.Comment" id="Comment" name="Comment" cols="40" rows="6" class="form-control" aria-describedby="CommentHelpBlock"></textarea> 
+        <span id="CommentHelpBlock" class="form-text text-muted">Opcional</span>
+      </div>
+    </div> 
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-success btn-block"><i class="fas fa-cloud-upload-alt"></i> Registrar</button>
+      </div>
+    </div>
+  </form>
