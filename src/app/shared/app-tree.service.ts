@@ -12,7 +12,8 @@ export class AppTreeService {
     Descripcion : null,
     Foto : null,
     Latitud : null,
-    Longitud : null  
+    Longitud : null, 
+    Plantador : null
   };
 
   //Web API URL

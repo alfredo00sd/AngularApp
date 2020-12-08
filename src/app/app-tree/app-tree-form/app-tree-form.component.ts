@@ -33,7 +33,8 @@ export class AppTreeFormComponent implements OnInit {
       Descripcion : "",
       Foto : "",
       Latitud : "",
-      Longitud : ""
+      Longitud : "",
+      Plantador : ""
     }
   }
 

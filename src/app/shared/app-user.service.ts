@@ -47,4 +47,7 @@ export class AppUserService {
     .then(res => this.list = res as AppUser[] );
   }
 
+  getAll() : Promise<any[]> {
+    return this.http.get<any[]>(this.rootUrl+'/userController').toPromise();
+  }
 }

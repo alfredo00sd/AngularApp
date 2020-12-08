@@ -1,6 +1,6 @@
 <div class="jumbtron">
     <h1 class="display-5 text-center">
-        Arboles plantados : {{arboles.length}} Usuarios activos : 12 
+        Arboles plantados : {{arboles != null ? arboles.length : 0}} Usuarios registrados : {{users != null ? users.length : 0}} 
     </h1>
     <hr>
 
@@ -13,7 +13,7 @@
                          <img src="../../../assets/images/arbol{{arbol.Id}}.png"><br>
                          🌺Especie : <b>{{arbol.Especie}}</b> <br>
                          🌲Nombre : {{arbol.Nombre}} <br>
-                         🌿Plantador : Yo 
+                         🌿Plantador : {{arbol.Plantador}} 
                      </agm-info-window>
                  </agm-marker>
              </agm-map>

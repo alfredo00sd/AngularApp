@@ -6,4 +6,5 @@ export class AppTree {
     Foto : string;
     Latitud : string;
     Longitud : string;
+    Plantador : string;
 }
